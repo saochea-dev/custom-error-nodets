@@ -18,8 +18,8 @@
 
 1. Clone the repository:
     ```sh
-    git clone https://github.com/saochea-dev/todos-nodets.git
-    cd todos-nodets
+    git clone https://github.com/saochea-dev/custom-error-nodets.git
+    cd custom-error-nodets
     ```
 
 2. Install the dependencies:
