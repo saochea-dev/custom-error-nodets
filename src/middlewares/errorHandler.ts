@@ -7,7 +7,6 @@ import { HttpStatusCode } from "../constant/HttpStatusCode";
 export const errorHandler = (error: Error, req: Request, res: Response, next: NextFunction): any => {
 
   try {
-
     if (error instanceof BaseError) {
       console.error(error);
       return res.send({ error, ...{ data: {} } });

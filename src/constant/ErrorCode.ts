@@ -6,6 +6,7 @@ export const ErrorCode = {
     NOT_FOUND_ERROR:{Code:"000004",Description:"Not Found Data Error"},
     LIST_ERROR:{Code:"000005",Description:"List Data Error"},
     UPDATE_NOT_AFFECT_ERROR:{Code:"000006",Description:"Update Data Error"},
-    DELETE_DATA_ERROR:{Code:"000007",Description:"Delete Data Error"}
+    DELETE_DATA_ERROR:{Code:"000007",Description:"Delete Data Error"},
+    MISSING_REQUIRED_DATA_ERROR:{Code:"000008",Description:"Missing Required Data Error"}
 } as const;
 export type ErrorCode = keyof typeof ErrorCode;

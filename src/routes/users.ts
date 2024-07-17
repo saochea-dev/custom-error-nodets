@@ -4,6 +4,7 @@ import { NotFoundError } from "../exception/NotFoundError";
 import { users, User, getUserById, updateUserById, removeUserOneById, addUser } from "../data";
 import { UpdateNotAffectError } from "../exception/UpdateNotAffectError";
 import { BaseError } from "../exception/BaseError";
+import { DataValidator } from "../util/DataValidator";
 
 const router = Router();
 
@@ -22,8 +23,14 @@ const retrieveListUser = (req: Request, res: Response, next: NextFunction): any 
 
 const retrieveUserById = (req: Request, res: Response, next: NextFunction) => {
   try {
+
+    DataValidator.validate(req.params,"name");
+
     const id: number = parseInt(req.params.id, 10);
+
+    console.log(Object.keys(req.params))
     const user: {} | User = getUserById(id);
+    console.log(Object.keys(user))
     if (Object.keys(user).length) {
       res.send({ data: user })
     } else {
